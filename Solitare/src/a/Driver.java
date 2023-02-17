@@ -60,7 +60,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener {
 	public void paint(Graphics g) {
 		
 			super.paintComponent(g);
-			Pictures p = new Pictures(100, 100);
+			Pictures p = new Pictures(200, 100);
 			p.paintCard(g);
 	}
 	

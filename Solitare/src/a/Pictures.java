@@ -44,9 +44,32 @@ public class Pictures {
 		x = pX;
 		y = pY;
 	}
+	
+	public static int getX() {
+		return x;
+	}
+	
+	public static int getY() {
+		return y;
+	}
 	public static void paintCard(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
-		g.drawLine(x-100, y, x, y);
+		drawCardBoarder(getX(), getY(), g);
+	}
+	
+	public static void drawCardBoarder(int x, int y, Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		g.drawLine(x, y, x+250, y);
+		g.drawLine(x, y, x, y+350);
+		g.drawLine(x+250, y, x+250, y+350);
+		g.drawLine(x, y+350, x+250, y+350);
+	}
+	
+	public static void drawSymbol(String symbol, Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		char[] temp = new char[1];
+		temp[0] = symbol.charAt(0);
+		g.drawChars(null, 0, 50, 200, 100);
 	}
 	
 	
