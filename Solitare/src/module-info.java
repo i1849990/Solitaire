@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Ibrah
+ *
+ */
+module Solitare {
+}
