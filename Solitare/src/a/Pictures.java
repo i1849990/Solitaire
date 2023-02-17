@@ -34,6 +34,21 @@ import java.awt.geom.AffineTransform;
 import java.lang.Object;
 import java.net.URL;
 
-public class Board {
+
+public class Pictures {
+
+	private static int x;
+	private static int y;
 	
+	public Pictures(int pX, int pY) {
+		x = pX;
+		y = pY;
+	}
+	public static void paintCard(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		g.drawLine(x-100, y, x, y);
+	}
+	
+	
+
 }
