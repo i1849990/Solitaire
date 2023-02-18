@@ -52,12 +52,13 @@ public class Pictures {
 	public static int getY() {
 		return y;
 	}
-	public static void paintCard(Graphics g) {
+	public void paintCard(String symbol, Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		drawCardBoarder(getX(), getY(), g);
+		drawSymbol(symbol, g);
 	}
 	
-	public static void drawCardBoarder(int x, int y, Graphics g) {
+	public void drawCardBoarder(int x, int y, Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		g.drawLine(x, y, x+250, y);
 		g.drawLine(x, y, x, y+350);
@@ -65,11 +66,17 @@ public class Pictures {
 		g.drawLine(x, y+350, x+250, y+350);
 	}
 	
-	public static void drawSymbol(String symbol, Graphics g) {
+	public void drawSymbol(String symbol, Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
-		char[] temp = new char[1];
-		temp[0] = symbol.charAt(0);
-		g.drawChars(null, 0, 50, 200, 100);
+		char[] temp = new char[symbol.length()-1];
+		for (int i = 0; i < temp.length; i ++) {
+			temp[i] = symbol.charAt(i);
+		}
+		Font f = new Font("Arial",Font.BOLD,50);
+		g.setFont(f);
+		g.drawChars(temp, 0, 1, 210, 150);
+		Font f1 = new Font("Arial",Font.BOLD,-50);
+		g.drawChars(temp, 0, 1, 440, 400);
 	}
 	
 	
